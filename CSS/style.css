@@ -1,0 +1,29 @@
+body {
+  display: flex;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.card {
+  display: flex;
+  margin: auto;
+  width: 50%;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.image{
+  width: 16rem;
+  height: 16rem;
+  flex-shrink: 0;
+}
+
+.image img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
+}
+
+.avatar {
+  border-radius: 50%;
+  max-width: 2.5rem;
+}
