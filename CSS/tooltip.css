@@ -1,0 +1,46 @@
+/* HTML: <div class="tooltip">This is a Speech Bubble with a solid coloration and with border radius </div> */
+.tooltip {
+  bottom: 3.5rem;
+  right: -5.5rem;
+  position: absolute;
+  color: #fff;
+  font-size: 18px;
+  max-width: 28ch;
+
+}
+.tooltip {
+  /* triangle dimension */
+  --b: 1em; /* base */
+  --h: 0.5em; /* height */
+
+  --p: 50%; /* triangle position (0%:left 100%:right) */
+  --r: 0.4em; /* the radius */
+  --c: hsl(217, 19%, 35%);
+
+  padding: 0.75em 1.75em;
+  border-radius: var(--r) var(--r) min(var(--r),100% - var(--p) - var(--b)/2) min(var(--r),var(--p) - var(--b)/2)/var(--r);
+  clip-path: polygon(0 100%,0 0,100% 0,100% 100%,
+    min(100%,var(--p) + var(--b)/2) 100%,
+    var(--p) calc(100% + var(--h)),
+    max(0%  ,var(--p) - var(--b)/2) 100%);
+  background: var(--c);
+  border-image: conic-gradient(var(--c) 0 0) fill 0/
+    var(--r) calc(100% - var(--p) - var(--b)/2) 0 calc(var(--p) - var(--b)/2)/
+    0 0 var(--h) 0;
+}
+
+.tooltip p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  color: white;
+  font-size: 1em;
+}
+
+#share {
+  color:hsl(212, 23%, 69%);
+  font-size: 0.6em;
+  letter-spacing: 0.2em;
+}
